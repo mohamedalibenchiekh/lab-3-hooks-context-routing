@@ -10,22 +10,23 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import DashboardPage from "./pages/DashboardPage";
 import ItemDetailPage from "./pages/ItemDetailPage";
 
-
 export default function App() {
   return (
     <BrowserRouter>
       <Navigation />
-      <main style={{ padding: "1rem" }}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/users/:id" element={<UserDetailPage />} />
-          <Route path="/login" element={<FakeLoginPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-          <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
-          <Route path="/dashboard/items/:id" element={<ProtectedRoute><ItemDetailPage /></ProtectedRoute>} />
-        </Routes>
+      <main className="page">
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/users/:id" element={<UserDetailPage />} />
+            <Route path="/login" element={<FakeLoginPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+            <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
+            <Route path="/dashboard/items/:id" element={<ProtectedRoute><ItemDetailPage /></ProtectedRoute>} />
+          </Routes>
+        </div>
       </main>
     </BrowserRouter>
   );
